@@ -1,0 +1,45 @@
+import Link from "next/link";
+import React from "react";
+
+const NavBar = () => {
+  return (
+    <nav className="flex justify-between bg-white p-5">
+      <ul className="flex gap-3">
+        <li>
+          <Link href={"/"}>Home</Link>
+        </li>
+        <li>
+          <Link href={"/destination"}>Destinations</Link>
+        </li>
+        <li>
+          <Link href={"/my-booking"}>My Booking</Link>
+        </li>
+        <li>
+          <Link href={"/admin"}>Admin</Link>
+        </li>
+      </ul>
+
+      <div>
+        <h1 className="text-4xl font-extrabold">
+          <span className="bg-linear-to-r from-blue-500 via-cyan-400 to-emerald-300 bg-clip-text text-transparent">
+            Beyond Horizon
+          </span>
+        </h1>
+      </div>
+
+      <ul className="flex gap-3">
+        <li>
+          <Link href={"/profile"}>Profile</Link>
+        </li>
+        <li>
+          <Link href={"/signin"}>Signin</Link>
+        </li>
+        <li>
+          <Link href={"/signup"}>Signup</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+export default NavBar;
