@@ -27,8 +27,8 @@ const AddDestinationPage = () => {
       body: JSON.stringify(destination),
     });
     if (res.ok) {
-      const data = await res.json();
-      console.log("Database Response:", data);
+      const dbResponseFromBackend = await res.json();
+      console.log("Database Response:", dbResponseFromBackend);
       e.target.reset();
       alert("Destination added successfully!");
     } else {
