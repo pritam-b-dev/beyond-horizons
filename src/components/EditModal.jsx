@@ -45,7 +45,7 @@ export function EditModal({ destinationDetails }) {
       console.log("Database Response:", dbResponseFromBackend);
       router.refresh();
       e.target.reset();
-      alert("Destination added successfully!");
+      alert("Destination updated successfully!");
     } else {
       console.error("Server returned an error status:", res.status);
     }

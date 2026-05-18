@@ -6,6 +6,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { SlCalender } from "react-icons/sl";
 import { EditModal } from "../../../components/EditModal";
+import { DeleteAlert } from "../../../components/DeleteAlert";
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -34,9 +35,7 @@ const DestinationDetailsPage = async ({ params }) => {
         </div>
         <div>
           <EditModal destinationDetails={destinationDetails} />
-          <Button variant="outline" className={"rounded-none px-10 py-2"}>
-            Delete
-          </Button>
+          <DeleteAlert destinationDetails={destinationDetails} />
         </div>
       </div>
       <Image
