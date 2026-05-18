@@ -36,6 +36,12 @@ const SignInPage = () => {
     }
   };
 
+  const handleGoogle = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="max-w-7xl mx-auto my-5">
       <div className="text-center">
@@ -90,6 +96,11 @@ const SignInPage = () => {
             </Button>
           </div>
         </Form>
+        <div>
+          <Button onClick={handleGoogle} className={"w-full justify-center"}>
+            Sign in with Google
+          </Button>
+        </div>
       </Card>
     </div>
   );
