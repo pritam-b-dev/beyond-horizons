@@ -1,10 +1,12 @@
+import { Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 
 const DestinationCard = ({ singleDestination }) => {
-  const { imageUrl, price, country, destinationName, duration } =
+  const { _id, imageUrl, price, country, destinationName, duration } =
     singleDestination;
   return (
     <div className="border p-8 rounded-md space-y-3">
@@ -25,6 +27,11 @@ const DestinationCard = ({ singleDestination }) => {
       <div className="flex gap-3 items-center">
         <SlCalender /> <span>{duration}</span>
       </div>
+      <Link href={`/destination/${_id}`}>
+        <Button variant="ghost" className={"mt-1 text-cyan-500 "}>
+          Book Now <FaExternalLinkAlt />
+        </Button>
+      </Link>
     </div>
   );
 };
