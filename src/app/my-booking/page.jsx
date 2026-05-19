@@ -58,7 +58,7 @@ const MyBookingPage = async () => {
             <div>
               <DeleteBookingAlert bookingId={booking._id} />
               <Link
-                href={`http://localhost:3000/destination/${booking.destinationId}`}
+                href={`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${booking.destinationId}`}
                 className="ml-5"
               >
                 <Button>View</Button>
