@@ -15,13 +15,13 @@ const Banner = () => {
         </p>
 
         <div className="flex gap-5">
-          <Link href={"http://localhost:3000/destination"}>
+          <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`}>
             <button className="uppercase bg-cyan-500 px-5 py-3 cursor-pointer">
               Explore Now
             </button>
           </Link>
 
-          <Link href={"http://localhost:3000/destination"}>
+          <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`}>
             <button className="uppercase px-5 py-3 bg-white/50 cursor-pointer">
               View Destination
             </button>
