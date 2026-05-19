@@ -6,10 +6,13 @@ import { useRouter } from "next/navigation";
 export function DeleteBookingAlert({ bookingId }) {
   const router = useRouter();
   const handleDelete = async () => {
+    const { data: tokenData } = await authClient.token();
+
     const res = await fetch(`http://localhost:5000/bookings/${bookingId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${tokenData?.token}`,
       },
     });
     if (res.ok) {
