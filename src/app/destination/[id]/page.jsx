@@ -8,12 +8,17 @@ import { SlCalender } from "react-icons/sl";
 import { EditModal } from "../../../components/EditModal";
 import { DeleteAlert } from "../../../components/DeleteAlert";
 import BookingCard from "../../../components/BookingCard";
+import { auth } from "../../../lib/auth";
+import { headers } from "next/headers";
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  });
   const res = await fetch(`http://localhost:5000/destination/${id}`, {
     headers: {
-      athorization: "logged in",
+      athorization: `Bearer ${token}`,
     },
   });
   const destinationDetails = await res.json();
