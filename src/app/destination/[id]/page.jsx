@@ -55,10 +55,7 @@ const DestinationDetailsPage = async ({ params }) => {
     <div className="max-w-7xl mx-auto my-5">
       <div className="flex justify-between">
         <div>
-          <Link
-            href={`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`}
-            className="flex gap-2 items-center"
-          >
+          <Link href={`/destination`} className="flex gap-2 items-center">
             <FaArrowLeftLong /> <span>Back to Destinations</span>
           </Link>
         </div>
