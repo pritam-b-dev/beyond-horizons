@@ -7,6 +7,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { SlCalender } from "react-icons/sl";
 import { EditModal } from "../../../components/EditModal";
 import { DeleteAlert } from "../../../components/DeleteAlert";
+import BookingCard from "../../../components/BookingCard";
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -45,24 +46,36 @@ const DestinationDetailsPage = async ({ params }) => {
         height={1000}
         className="h-120 mx-auto my-5 object-contain"
       />
-      <div>
-        <div className="flex gap-2 items-center">
-          <FaMapMarkerAlt /> <span>{country}</span>
+
+      {/* informations and booking section */}
+      <div className="flex justify-between">
+        {/* informations */}
+        <div>
+          <div>
+            <div className="flex gap-2 items-center">
+              <FaMapMarkerAlt /> <span>{country}</span>
+            </div>
+          </div>
+          <div>
+            <h1>{destinationName}</h1>
+          </div>
+          <div>${price}/per person</div>
+          <div>
+            <div className="flex gap-3 items-center">
+              <SlCalender /> <span>{duration}</span>
+            </div>
+          </div>
+          <div>
+            <h1>Overview</h1>
+            <p>{description}</p>
+          </div>
+        </div>
+        {/* booking card  */}
+        <div>
+          <BookingCard destinationDetails={destinationDetails} />
         </div>
       </div>
-      <div>
-        <h1>{destinationName}</h1>
-      </div>
-      <div>${price}/per person</div>
-      <div>
-        <div className="flex gap-3 items-center">
-          <SlCalender /> <span>{duration}</span>
-        </div>
-      </div>
-      <div>
-        <h1>Overview</h1>
-        <p>{description}</p>
-      </div>
+      {/* informations and booking section ends */}
     </div>
   );
 };
