@@ -8,13 +8,16 @@ export function DeleteBookingAlert({ bookingId }) {
   const handleDelete = async () => {
     const { data: tokenData } = await authClient.token();
 
-    const res = await fetch(`http://localhost:5000/bookings/${bookingId}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${tokenData?.token}`,
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/bookings/${bookingId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${tokenData?.token}`,
+        },
       },
-    });
+    );
     if (res.ok) {
       const responseFromBackend = await res.json();
       console.log("Database Response:", responseFromBackend);
