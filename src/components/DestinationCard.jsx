@@ -27,7 +27,7 @@ const DestinationCard = ({ singleDestination }) => {
       <div className="flex gap-3 items-center">
         <SlCalender /> <span>{duration}</span>
       </div>
-      <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${_id}`}>
+      <Link href={`/destination/${_id}`}>
         <Button variant="ghost" className={"mt-1 text-cyan-500 "}>
           Book Now <FaExternalLinkAlt />
         </Button>
